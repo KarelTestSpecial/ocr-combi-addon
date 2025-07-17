@@ -1,0 +1,33 @@
+{
+  "timeZone": "Europe/Brussels",
+  "dependencies": {
+    "enabledAdvancedServices": [
+      {
+        "userSymbol": "Drive",
+        "serviceId": "drive",
+        "version": "v2"
+      }
+    ]
+  },
+  "exceptionLogging": "STACKDRIVER",
+  "oauthScopes": [
+    "https://www.googleapis.com/auth/drive",
+    "https://www.googleapis.com/auth/documents",
+    "https://www.googleapis.com/auth/drive.addons.metadata.readonly"
+  ],
+  "runtimeVersion": "V8",
+  "addOns": {
+    "common": {
+      "name": "OCR Combi",
+      "logoUrl": "https://raw.githubusercontent.com/user/repo/branch/icon.png"
+    },
+    "drive": {
+      "homepageTrigger": {
+        "runFunction": "maakHomepageKaart"
+      },
+      "onItemsSelectedTrigger": {
+        "runFunction": "onDriveItemsSelected"
+      }
+    }
+  }
+}
