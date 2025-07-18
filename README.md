@@ -1,8 +1,8 @@
 To all technically skilled users:
 
-README.md within CODE folder : You can install it locally.
+README.md within CODE folder : you can install it locally.
 
-
+----- 
  
 To all developers :
 
