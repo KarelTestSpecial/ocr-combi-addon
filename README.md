@@ -1,8 +1,9 @@
 To all technically skilled users:
 
-README.md within CODE folder. You can install it locally.
+README.md within CODE folder : You can install it locally.
 
 
+ 
 To all developers :
 
 Please feel free to set up the project as a Google Chrome Web Store extension . 
