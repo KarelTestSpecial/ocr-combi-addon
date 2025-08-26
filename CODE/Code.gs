@@ -43,7 +43,7 @@ function createMainInterfaceCard(e) {
 
   if (e && e.drive && e.drive.selectedItems) {
     selectedImages = e.drive.selectedItems.filter(item => imageMimeTypes.includes(item.mimeType));
-    selectedOcrDocs = e.drive.selectedItems.filter(item => item.mimeType === MimeType.GOOGLE_DOCS && item.title.startsWith(OCR_PREFIX));
+    selectedOcrDocs = e.drive.selectedItems.filter(item => item.mimeType === MimeType.GOOGLE_DOCS);
   }
 
   const isOverLimit = selectedImages.length > MAX_FILES_AT_ONCE;
@@ -159,7 +159,7 @@ function handleCombineClick(e) {
     return CardService.newActionResponseBuilder().setNotification(CardService.newNotification().setText(getString('errorNoOcrDocs', userLocale))).build();
   }
 
-  const ocrDocsToProcess = e.drive.selectedItems.filter(item => item.mimeType === MimeType.GOOGLE_DOCS && item.title.startsWith(OCR_PREFIX));
+  const ocrDocsToProcess = e.drive.selectedItems.filter(item => item.mimeType === MimeType.GOOGLE_DOCS);
 
   if (ocrDocsToProcess.length === 0) {
     return CardService.newActionResponseBuilder().setNotification(CardService.newNotification().setText(getString('errorNoOcrDocs', userLocale))).build();
@@ -179,7 +179,10 @@ function handleCombineClick(e) {
     }
 
     ocrDocsToProcess.forEach((docInfo, index) => {
-      const originalName = docInfo.title.substring(OCR_PREFIX.length);
+      let originalName = docInfo.title;
+      if (docInfo.title.startsWith(OCR_PREFIX)) {
+        originalName = docInfo.title.substring(OCR_PREFIX.length);
+      }
       if (index > 0) { combinedText += `\n\n════════════════════════════════════\n\n`; }
       combinedText += `═══════ [Start van ${originalName}] ═══════\n\n`;
       const doc = DocumentApp.openById(docInfo.id);
