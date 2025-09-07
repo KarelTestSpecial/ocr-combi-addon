@@ -1,132 +1,132 @@
 # OCR-combi
 
-Een Google Workspace Add-on voor Google Drive die het proces van tekstherkenning (OCR) en het samenvoegen van documenten stroomlijnt.
+A Google Workspace Add-on for Google Drive that streamlines the process of text recognition (OCR) and document merging.
 
-## Korte Omschrijving
+## Short Description
 
-Heeft u meerdere foto's van een document of verschillende PDF-bestanden waaruit u de tekst wilt extraheren en combineren? OCR-combi lost dit probleem op. Deze add-on gebruikt de ingebouwde OCR-functionaliteit van Google om tekst te herkennen in meerdere afbeeldings- of PDF-bestanden tegelijk. Vervolgens voegt het de herkende tekst van al deze bestanden samen in één overzichtelijk Google Document, direct in uw Google Drive.
+Do you have multiple photos of a document or several PDF files from which you want to extract and combine the text? OCR-combi solves this problem. This add-on uses Google's built-in OCR functionality to recognize text in multiple image or PDF files at once. It then merges the recognized text from all these files into a single, well-organized Google Document, directly in your Google Drive.
 
-## Waarom deze tool?
+## Why this tool?
 
-Het standaardproces voor OCR in Google Drive is omslachtig:
-1.  Klik met de rechtermuisknop op één bestand.
-2.  Kies "Openen met" -> "Google Documenten".
-3.  Wacht tot de conversie is voltooid.
-4.  Herhaal dit voor elk bestand.
-5.  Open elk nieuw document, kopieer de tekst, en plak deze in een hoofddocument.
+The standard OCR process in Google Drive is cumbersome:
+1.  Right-click on a single file.
+2.  Choose "Open with" -> "Google Docs".
+3.  Wait for the conversion to complete.
+4.  Repeat this for every file.
+5.  Open each new document, copy the text, and paste it into a master document.
 
-OCR-combi automatiseert deze stappen. U selecteert al uw bestanden, klikt op één knop voor de conversie, selecteert vervolgens de nieuwe documenten en klikt nogmaals op één knop om alles samen te voegen. Dit bespaart aanzienlijk veel tijd en muisklikken.
+OCR-combi automates these steps. You select all your files, click one button for the conversion, then select the new documents and click another button to merge everything. This saves a significant amount of time and mouse clicks.
 
-## Functionaliteiten
+## Features
 
--   **Batch OCR:** Voer tekstherkenning uit op meerdere bestanden (`.jpg`, `.png`, `.gif`, `.pdf`) tegelijk.
--   **Automatisch Samenvoegen:** Combineer de tekst van meerdere Google Documenten in een nieuw, enkel document.
--   **Behoud van Locatie:** Het uiteindelijke gecombineerde document wordt in dezelfde map geplaatst als de bronbestanden.
--   **Sorteeropties:** Kies ervoor om de documenten alfabetisch (A-Z) of omgekeerd alfabetisch (Z-A) te sorteren voordat ze worden samengevoegd.
--   **Duidelijke Scheidingstekens:** Elk gecombineerd tekstblok wordt voorzien van een duidelijke header en separator, zodat u de herkomst van elke tekst kunt zien.
--   **Bescherming tegen Timeouts:** Een ingebouwde limiet voorkomt dat het script stopt bij het verwerken van te veel bestanden tegelijk.
+-   **Batch OCR:** Perform text recognition on multiple files (`.jpg`, `.png`, `.gif`, `.pdf`) at once.
+-   **Automatic Merging:** Combine the text from multiple Google Docs into a new, single document.
+-   **Location Preservation:** The final combined document is placed in the same folder as the source files.
+-   **Sorting Options:** Choose to sort the documents alphabetically (A-Z) or reverse alphabetically (Z-A) before merging.
+-   **Clear Separators:** Each combined text block is provided with a clear header and separator, so you can see the origin of each text.
+-   **Timeout Protection:** A built-in limit prevents the script from stopping when processing too many files at once.
 
-## Belangrijke Opmerking over Installatie
+## Important Note on Installation
 
-Deze add-on wordt niet via de officiële Google Workspace Marketplace gedistribueerd. De verificatie-eisen van Google (zoals een geverifieerde domeinnaam en een dure beveiligingsaudit) zijn te zwaar voor een kleinschalig, open-source project.
+This add-on is not distributed through the official Google Workspace Marketplace. Google's verification requirements (such as a verified domain name and an expensive security audit) are too burdensome for a small-scale, open-source project.
 
-Daarom volgt u een **handmatige installatieprocedure**. Tijdens dit proces zal Google u een waarschuwing tonen zoals **"Google heeft deze app niet geverifieerd"**. Dit is **normaal en verwacht** voor scripts die u zelf installeert. U geeft enkel uzelf toestemming om het script in uw eigen account uit te voeren. De code is volledig openbaar in deze repository, dus u kunt zelf controleren dat er geen misbruik wordt gemaakt van uw data.
+Therefore, you will follow a **manual installation procedure**. During this process, Google will show you a warning like **"Google hasn't verified this app"**. This is **normal and expected** for scripts you install yourself. You are only giving yourself permission to run the script in your own account. The code is fully public in this repository, so you can verify for yourself that your data is not being misused.
 
-## Installatiegids (Stap-voor-stap)
+## Installation Guide (Step-by-step)
 
-Volg deze stappen nauwkeurig om de add-on te installeren.
+Follow these steps carefully to install the add-on.
 
-### Stap 1: Maak een nieuw Apps Script-project
+### Step 1: Create a new Apps Script project
 
-1.  Ga naar [script.google.com](https://script.google.com).
-2.  Klik linksboven op **+ Nieuw project**.
+1.  Go to [script.google.com](https://script.google.com).
+2.  Click on **+ New project** in the top left.
 
-### Stap 2: Voeg de projectbestanden toe
+### Step 2: Add the project files
 
-U vervangt de standaard bestanden door de code uit deze repository.
+You will replace the default files with the code from this repository.
 
 #### A. Code.gs
-1.  In het Apps Script-project ziet u een bestand genaamd `Code.gs`.
-2.  Verwijder alle bestaande code in dit bestand.
-3.  Kopieer de volledige inhoud van het [**`Code.gs`**](CODE/Code.gs)-bestand uit deze repository.
-4.  Plak de gekopieerde code in de lege `Code.gs` in uw Apps Script-project.
+1.  In the Apps Script project, you will see a file named `Code.gs`.
+2.  Delete all existing code in this file.
+3.  Copy the entire content of the [**`Code.gs`**](CODE/Code.gs) file from this repository.
+4.  Paste the copied code into the empty `Code.gs` in your Apps Script project.
 
 #### B. Strings.gs
-1.  Klik in de editor op het **+** icoon naast "Bestanden".
-2.  Kies **Script**.
-3.  Geef het nieuwe bestand de naam `Strings` (de `.gs`-extensie wordt automatisch toegevoegd).
-4.  Kopieer de volledige inhoud van het [**`Strings.gs`**](CODE/Strings.gs)-bestand uit deze repository.
-5.  Plak de gekopieerde code in uw nieuwe `Strings.gs`-bestand.
+1.  In the editor, click the **+** icon next to "Files".
+2.  Choose **Script**.
+3.  Name the new file `Strings` (the `.gs` extension will be added automatically).
+4.  Copy the entire content of the [**`Strings.gs`**](CODE/Strings.gs) file from this repository.
+5.  Paste the copied code into your new `Strings.gs` file.
 
-#### C. Manifestbestand (appsscript.json)
-1.  Klik links op het **Projectinstellingen**-icoon (tandwiel ⚙️).
-2.  Vink het selectievakje **Manifestbestand 'appsscript.json' in editor tonen** aan.
-3.  Ga terug naar de **Editor** (icoon `<>`). U ziet nu het bestand `appsscript.json`.
-4.  Verwijder alle bestaande inhoud in dit bestand.
-5.  Kopieer de volledige inhoud van het [**`appsscript.json`**](CODE/appsscript.json)-bestand uit deze repository.
-6.  Plak de gekopieerde code in uw `appsscript.json`-bestand.
+#### C. Manifest file (appsscript.json)
+1.  On the left, click the **Project Settings** icon (gear ⚙️).
+2.  Check the box **Show "appsscript.json" manifest file in editor**.
+3.  Go back to the **Editor** (icon `<>`). You will now see the `appsscript.json` file.
+4.  Delete all existing content in this file.
+5.  Copy the entire content of the [**`appsscript.json`**](CODE/appsscript.json) file from this repository.
+6.  Paste the copied code into your `appsscript.json` file.
 
-### Stap 3: Schakel de Google Drive API in
+### Step 3: Enable the Google Drive API
 
-Het script heeft een geavanceerde service nodig om OCR uit te voeren.
-1.  Klik in de editor op het **+** icoon naast "Services".
-2.  Zoek in de lijst naar **Google Drive API** en selecteer deze.
-3.  Klik op de knop **Toevoegen**. U zou "Drive" nu moeten zien onder de lijst met Services.
+The script needs an advanced service to perform OCR.
+1.  In the editor, click the **+** icon next to "Services".
+2.  Find **Google Drive API** in the list and select it.
+3.  Click the **Add** button. You should now see "Drive" under the list of Services.
 
-### Stap 4: Sla het project op
+### Step 4: Save the project
 
-Klik bovenaan op het **Project opslaan**-icoon (diskette 💾).
+Click the **Save project** icon (diskette 💾) at the top.
 
-### Stap 5: Implementeer de Add-on
+### Step 5: Deploy the Add-on
 
-1.  Klik rechtsboven op de blauwe knop **Implementeren** en kies **Nieuwe implementatie**.
-2.  Klik naast "Selecteer type" op het **tandwiel-icoon** (Implementatietypen inschakelen).
-3.  Selecteer **Add-on**.
-4.  Geef de implementatie een beschrijving (bijv. "Versie 1").
-5.  Klik op **Implementeren**.
+1.  In the top right, click the blue **Deploy** button and choose **New deployment**.
+2.  Next to "Select type", click the **gear icon** (Enable deployment types).
+3.  Select **Add-on**.
+4.  Give the deployment a description (e.g., "Version 1").
+5.  Click **Deploy**.
 
-### Stap 6: Installeer de Add-on lokaal
+### Step 6: Install the Add-on locally
 
-1.  Na de implementatie verschijnt een venster "Implementatie bijgewerkt". Kopieer de **Add-on-URL**. Deze ziet eruit als `https://script.google.com/macros/d/{ID}/addon?authuser=0`.
-2.  Klik op **Gereed**.
-3.  Plak de gekopieerde URL in een nieuw browsertabblad en druk op Enter.
-4.  U krijgt een installatiescherm te zien voor "OCR Combi". Klik op **Installeren** en vervolgens op **Doorgaan**.
+1.  After deployment, a window "Deployment updated" will appear. Copy the **Add-on URL**. It looks like `https://script.google.com/macros/d/{ID}/addon?authuser=0`.
+2.  Click **Done**.
+3.  Paste the copied URL into a new browser tab and press Enter.
+4.  You will see an installation screen for "OCR Combi". Click **Install** and then **Continue**.
 
-### Stap 7: Autoriseer het script
+### Step 7: Authorize the script
 
-Dit is de stap waar de waarschuwing verschijnt.
-1.  Kies het Google-account waarmee u de add-on wilt gebruiken.
-2.  U ziet het scherm **"Google heeft deze app niet geverifieerd"**. Dit is de verwachte waarschuwing.
-3.  Klik op **Geavanceerd**.
-4.  Klik onderaan op de link **Doorgaan naar [Naam van uw project] (onveilig)**.
-5.  Bekijk de gevraagde toestemmingen (voor Drive en Documents) en klik op **Toestaan**.
+This is the step where the warning appears.
+1.  Choose the Google account you want to use the add-on with.
+2.  You will see the screen **"Google hasn't verified this app"**. This is the expected warning.
+3.  Click **Advanced**.
+4.  At the bottom, click the link **Go to [Name of your project] (unsafe)**.
+5.  Review the requested permissions (for Drive and Documents) and click **Allow**.
 
-De add-on is nu geïnstalleerd en klaar voor gebruik!
+The add-on is now installed and ready to use!
 
-## Gebruikershandleiding
+## User Guide
 
-1.  Ga naar uw **Google Drive**.
-2.  Selecteer één of meerdere afbeeldingsbestanden (`.jpg`, `.png`, etc.) of PDF's.
-3.  De **OCR-combi zijbalk** verschijnt automatisch aan de rechterkant. (Zo niet, vernieuw de pagina).
-4.  **Stap 1: Omzetten.** Klik op de knop `Stap 1: Zet X afbeelding(en) om`. Het script converteert elk bestand naar een Google Doc met de prefix `[OCR]`.
-5.  **Stap 2: Combineren.** Wacht tot de conversie klaar is. Selecteer nu alle nieuwe `[OCR]`-documenten in uw Drive.
-6.  De zijbalk wordt bijgewerkt. Kies de gewenste sorteervolgorde en klik op `Stap 2: Combineer X document(en)`.
-7.  Een nieuw document genaamd `Gecombineerde Tekst - ...` wordt aangemaakt met daarin alle tekst. U kunt dit direct openen via de link in de add-on.
+1.  Go to your **Google Drive**.
+2.  Select one or more image files (`.jpg`, `.png`, etc.) or PDFs.
+3.  The **OCR-combi sidebar** will automatically appear on the right. (If not, refresh the page).
+4.  **Step 1: Convert.** Click the button `Step 1: Convert X image(s)`. The script will convert each file to a Google Doc with the prefix `[OCR]`.
+5.  **Step 2: Combine.** Wait for the conversion to finish. Now select all the new `[OCR]` documents in your Drive.
+6.  The sidebar will update. Choose the desired sort order and click `Step 2: Combine X document(s)`.
+7.  A new document named `Combined Text - ...` will be created containing all the text. You can open it directly via the link in the add-on.
 
-**Let op:** De individuele `[OCR]`-documenten worden niet automatisch verwijderd, zodat u de conversie per bestand kunt controleren. U kunt ze handmatig verwijderen nadat u tevreden bent met het eindresultaat.
+**Note:** The individual `[OCR]` documents are not automatically deleted, so you can check the conversion for each file. You can delete them manually after you are satisfied with the final result.
 
-## Voor Ontwikkelaars (For Developers)
+## For Developers
 
-Voel u vrij om dit project op te zetten als een extensie voor de Google Chrome Web Store.
+Please feel free to set up the project as a Google Chrome Web Store extension.
 
-De oorspronkelijke auteur heeft geen persoonlijk webdomein, wat een nieuwe vereiste is van Google voor oAuth-verificatie voor extensies die Google/YouTube API's gebruiken via het Google Cloud Platform (sinds Manifest v3).
+The original author does not have a personal web domain, which is a new requirement by Google for oAuth-verification for extensions that use Google/YouTube APIs via the Google Cloud Platform (since Manifest v3).
 
-Het is een goed programma en de auteur gebruikt het lokaal (wat is toegestaan door Google). Het zou een aanwinst zijn voor de gemeenschap als iemand er een publiek beschikbare Chrome-extensie van zou maken.
+It is a good program and the author uses it locally (which is allowed by Google). It would be beneficial to the community if someone made a publicly available Chrome extension out of it.
 
 ## Disclaimer
 
-Deze software wordt "as is" aangeboden, zonder enige vorm of garantie, expliciet of impliciet. De auteur is niet aansprakelijk voor enig verlies van data of schade die voortvloeit uit het gebruik van deze software. Gebruik op eigen risico.
+This software is provided "as is", without warranty of any kind, express or implied. The author is not liable for any loss of data or damage arising from the use of this software. Use at your own risk.
 
-## Licentie
+## License
 
-Dit project is gelicentieerd onder de MIT-licentie. Er is geen `LICENSE`-bestand in deze repository, maar de standaard MIT-licentievoorwaarden zijn van toepassing.
+This project is licensed under the MIT License. There is no `LICENSE` file in this repository, but the standard MIT license terms apply.
