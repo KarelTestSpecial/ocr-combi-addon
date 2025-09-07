@@ -130,3 +130,4 @@ This software is provided "as is", without warranty of any kind, express or impl
 ## License
 
 This project is licensed under the MIT License. There is no `LICENSE` file in this repository, but the standard MIT license terms apply.
+
