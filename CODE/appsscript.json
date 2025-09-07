@@ -19,7 +19,7 @@
   "addOns": {
     "common": {
       "name": "OCR Combi",
-      "logoUrl": "https://raw.githubusercontent.com/KarelTestSpecial/OCR-combi-addon/main/CODE/icon_OCR%2032x32.png"
+      "logoUrl": "https://raw.githubusercontent.com/KarelTestSpecial/ocr-combi-addon/main/CODE/icon_OCR%2032x32.png"
     },
     "drive": {
       "homepageTrigger": {
